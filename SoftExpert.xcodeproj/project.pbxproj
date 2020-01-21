@@ -14,6 +14,7 @@
 		8A529E5A23D735F100C399E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A529E5923D735F100C399E3 /* Assets.xcassets */; };
 		8A529E5D23D735F100C399E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A529E5B23D735F100C399E3 /* LaunchScreen.storyboard */; };
 		8A529E6823D735F100C399E3 /* SoftExpertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A529E6723D735F100C399E3 /* SoftExpertTests.swift */; };
+		8A529E7323D739BB00C399E3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A529E7223D739BB00C399E3 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		8A529E6323D735F100C399E3 /* SoftExpertTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoftExpertTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A529E6723D735F100C399E3 /* SoftExpertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftExpertTests.swift; sourceTree = "<group>"; };
 		8A529E6923D735F100C399E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A529E7223D739BB00C399E3 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				8A529E5923D735F100C399E3 /* Assets.xcassets */,
 				8A529E5B23D735F100C399E3 /* LaunchScreen.storyboard */,
 				8A529E5E23D735F100C399E3 /* Info.plist */,
+				8A529E7223D739BB00C399E3 /* TableViewCell.swift */,
 			);
 			path = SoftExpert;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A529E5523D735F000C399E3 /* ViewController.swift in Sources */,
+				8A529E7323D739BB00C399E3 /* TableViewCell.swift in Sources */,
 				8A529E5123D735F000C399E3 /* AppDelegate.swift in Sources */,
 				8A529E5323D735F000C399E3 /* SceneDelegate.swift in Sources */,
 			);
