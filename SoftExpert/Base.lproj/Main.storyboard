@@ -74,6 +74,11 @@
                                                 <constraint firstItem="NvM-kq-MSO" firstAttribute="top" secondItem="oOI-G0-C8f" secondAttribute="top" id="yzv-bR-28N"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="source" destination="kxR-Hg-atL" id="Pxb-kQ-qQP"/>
+                                            <outlet property="stackView" destination="h9H-fg-ZrF" id="CHm-Xi-fad"/>
+                                            <outlet property="title" destination="jyP-Yc-Qcx" id="Tl8-V6-wEo"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -81,20 +86,40 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="k1u-tt-7aD"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WoM-FS-k8T">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="HJd-SJ-TKY">
+                                        <rect key="frame" x="197" y="416" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="HJd-SJ-TKY" firstAttribute="centerX" secondItem="WoM-FS-k8T" secondAttribute="centerX" id="7km-Ip-sAc"/>
+                                    <constraint firstItem="HJd-SJ-TKY" firstAttribute="centerY" secondItem="WoM-FS-k8T" secondAttribute="centerY" id="rnf-nE-mfA"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ao5-ya-gwp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5Jc-F7-kwQ"/>
                             <constraint firstItem="Oio-VL-DRp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Hgf-zW-NnH"/>
                             <constraint firstItem="ao5-ya-gwp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Nbm-Ra-LO6"/>
+                            <constraint firstItem="WoM-FS-k8T" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Q0B-FU-sAZ"/>
+                            <constraint firstAttribute="topMargin" secondItem="WoM-FS-k8T" secondAttribute="top" id="So1-pj-4xM"/>
                             <constraint firstItem="Oio-VL-DRp" firstAttribute="top" secondItem="ao5-ya-gwp" secondAttribute="bottom" id="VLV-Q9-fyr"/>
+                            <constraint firstItem="WoM-FS-k8T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xpk-2n-Lxb"/>
+                            <constraint firstItem="WoM-FS-k8T" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="aC9-DN-Eng"/>
                             <constraint firstItem="Oio-VL-DRp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bM8-P9-SJj"/>
                             <constraint firstItem="ao5-ya-gwp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ccg-po-NHl"/>
                             <constraint firstAttribute="bottom" secondItem="Oio-VL-DRp" secondAttribute="bottom" id="hhS-TI-9hD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WoM-FS-k8T" secondAttribute="trailing" id="pbl-kq-30V"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="HJd-SJ-TKY" id="MuQ-zs-55B"/>
+                        <outlet property="loadingView" destination="WoM-FS-k8T" id="0tU-dl-BVT"/>
                         <outlet property="tableView" destination="Oio-VL-DRp" id="vXR-bg-XAx"/>
                     </connections>
                 </viewController>
