@@ -37,6 +37,8 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NvM-kq-MSO">
                                                     <rect key="frame" x="10" y="0.0" width="43.5" height="43.5"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="width" constant="43.5" id="AI1-O9-w8z"/>
+                                                        <constraint firstAttribute="height" constant="43.5" id="YJY-PV-dCu"/>
                                                         <constraint firstAttribute="width" secondItem="NvM-kq-MSO" secondAttribute="height" id="bN2-fp-3Ia"/>
                                                     </constraints>
                                                 </imageView>
@@ -66,17 +68,16 @@
                                                 <constraint firstItem="h9H-fg-ZrF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kxR-Hg-atL" secondAttribute="trailing" constant="8" symbolic="YES" id="Job-Ri-1c7"/>
                                                 <constraint firstItem="h9H-fg-ZrF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jyP-Yc-Qcx" secondAttribute="trailing" constant="8" symbolic="YES" id="R7C-gf-eZH"/>
                                                 <constraint firstItem="jyP-Yc-Qcx" firstAttribute="top" secondItem="NvM-kq-MSO" secondAttribute="top" id="d0s-J8-bdP"/>
-                                                <constraint firstAttribute="bottom" secondItem="NvM-kq-MSO" secondAttribute="bottom" id="fDb-Fv-Spa"/>
+                                                <constraint firstItem="NvM-kq-MSO" firstAttribute="centerY" secondItem="oOI-G0-C8f" secondAttribute="centerY" id="fkV-Q3-IfG"/>
                                                 <constraint firstItem="kxR-Hg-atL" firstAttribute="leading" secondItem="jyP-Yc-Qcx" secondAttribute="leading" id="jZy-qx-wMK"/>
                                                 <constraint firstItem="kxR-Hg-atL" firstAttribute="top" secondItem="jyP-Yc-Qcx" secondAttribute="bottom" id="klS-U8-Zjs"/>
                                                 <constraint firstItem="jyP-Yc-Qcx" firstAttribute="leading" secondItem="NvM-kq-MSO" secondAttribute="trailing" constant="20" id="l6i-W0-fAj"/>
                                                 <constraint firstAttribute="trailing" secondItem="h9H-fg-ZrF" secondAttribute="trailing" constant="20" id="ooN-n3-Gvz"/>
-                                                <constraint firstItem="NvM-kq-MSO" firstAttribute="top" secondItem="oOI-G0-C8f" secondAttribute="top" id="yzv-bR-28N"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="source" destination="kxR-Hg-atL" id="Pxb-kQ-qQP"/>
-                                            <outlet property="stackView" destination="h9H-fg-ZrF" id="CHm-Xi-fad"/>
+                                            <outlet property="source" destination="kxR-Hg-atL" id="wc3-24-pmv"/>
+                                            <outlet property="stackView" destination="h9H-fg-ZrF" id="8Xe-5q-nrU"/>
                                             <outlet property="title" destination="jyP-Yc-Qcx" id="Tl8-V6-wEo"/>
                                         </connections>
                                     </tableViewCell>
@@ -120,6 +121,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="HJd-SJ-TKY" id="MuQ-zs-55B"/>
                         <outlet property="loadingView" destination="WoM-FS-k8T" id="0tU-dl-BVT"/>
+                        <outlet property="searchBar" destination="ao5-ya-gwp" id="PJd-5Y-6ed"/>
                         <outlet property="tableView" destination="Oio-VL-DRp" id="vXR-bg-XAx"/>
                     </connections>
                 </viewController>

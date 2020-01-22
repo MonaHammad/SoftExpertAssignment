@@ -14,9 +14,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     var hits: [Hits] = []
-    
+    var query = ""
+    @IBOutlet weak var searchBar: UISearchBar!
     var currentPage : Int = 0
     var isLoadingList : Bool = false
+    
+    func searchBarIsEmpty() -> Bool {
+        // Returns true if the text is empty or nil
+        return searchBar.text?.isEmpty ?? true
+    }
+
+    func isFiltering() -> Bool {
+        return searchBar.isFocused && !searchBarIsEmpty()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +35,14 @@ class ViewController: UIViewController {
         tableView.tableFooterView = UIView()
         loadingView.isHidden = true
         activityIndicator.stopAnimating()
-        getRecipes()
+        searchBar.delegate = self
     }
     
     func getRecipes() {
         // Build up the URL
         isLoadingList = false
 
-        let components = URLComponents(string: "https://api.edamam.com/search?q=chicken&app_id=89193820&app_key=b0c4f8afaa13f79ee3219775e0d90d23&from=\(currentPage)")!
+        let components = URLComponents(string: "https://api.edamam.com/search?q=\(query)&app_id=971ad906&app_key=00d8df64104f9eca991b868062fdc8f0&from=\(currentPage)")!
 //        components.queryItems = ["title": "New York Highlights"].map { (key, value) in
 //            URLQueryItem(name: key, value: value)
 //        }
@@ -76,6 +86,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         if let imagePath = recipe?.image {
             cell.imageView?.downloaded(from: imagePath)
         }
+        if let healthLabels = recipe?.healthLabels {
+            for text in healthLabels {
+                let label = UILabel()
+                label.text = text
+                label.textAlignment = .center
+                cell.stackView.addArrangedSubview(label)
+            }
+        }
+       
         return cell
     }
     
@@ -100,7 +119,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 extension UIImageView {
-    func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {  // for swift 4.2 syntax just use ===> mode: UIView.ContentMode
+    func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
         contentMode = mode
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard
@@ -114,8 +133,21 @@ extension UIImageView {
             }
         }.resume()
     }
-    func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {  // for swift 4.2 syntax just use ===> mode: UIView.ContentMode
+    func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
         guard let url = URL(string: link) else { return }
         downloaded(from: url, contentMode: mode)
+    }
+}
+extension ViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+       guard searchBar.text != "" else {
+            return
+        }
+        query = searchBar.text ?? ""
+        currentPage = 0
+        getRecipes()
     }
 }
